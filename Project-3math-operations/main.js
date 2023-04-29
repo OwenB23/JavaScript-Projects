@@ -48,13 +48,13 @@ function negation_operator() {
 
 // INCREMENT OPERATORS
 
-const x = 10;
+var x = 10;
 x++;
-document.write(x);
+document.write(x + "<br>");
 
-const y = 11;
+var y = 11;
 y--;
-document.write(y);
+document.write(y + "<br>");
 
 // RANDOM NUMBER
 
