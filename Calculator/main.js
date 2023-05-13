@@ -35,13 +35,15 @@ function Handle_Operator(Next_Operator) {
     calculator.operator = Next_Operator;
     return;
   }
-  if ((First_operand = null)) {
+  if (First_operand == null) {
     calculator.First_operand = Value_of_Input;
   } else if (operator) {
     const Value_Now = First_operand || 0;
+    if (typeof Perform_Calculations[operator] !== "function") {
+      throw new Error("Invalid operator");
+    }
     let result = Perform_Calculations[operator](Value_Now, Value_of_Input);
     result = Number(result).toFixed(9);
-    result = (result * 1).toString();
     calculator.Display_Value = parseFloat(result);
     calculator.First_operand = parseFloat(result);
   }
