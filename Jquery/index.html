@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Basic HTML Page with jQuery</title>
+    <style>
+      /* Optional CSS styles */
+      #container {
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .red-text {
+        color: red;
+      }
+      p:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Basic jQuery</h1>
+      <p>Paragraph 1</p>
+      <p id="2">Paragraph 2</p>
+      <p id="3">Paragraph 3</p>
+    </div>
+    <script>
+      // Jquery
+      $(document).ready(function () {
+        $("#2").addClass("red-text");
+
+        $("#3").click(function () {
+          $("h1").hide();
+        });
+      });
+
+      $("#2").click(function () {
+        $(this).fadeOut("slow", function () {
+          $(this.remove());
+        });
+      });
+    </script>
+  </body>
+</html>
