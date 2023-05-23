@@ -4,22 +4,112 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+
     <title>Document</title>
   </head>
-  <body>
-    <p id="mathAdd" onclick="mathAddition()">Click me to do math!</p>
-    <p id="mathSub" onclick="mathSubtraction()">Click me to do math!</p>
-    <p id="mathx" onclick="mathMultiplication()">Click me to do math!</p>
-    <p id="mathDiv" onclick="mathDivision()">Click me to do math!</p>
-    <p id="mathOperation" onclick="operation()">Click me to do math!</p>
-    <p id="mathMod" onclick="modulus_operator()">Click me to do math!</p>
-    <p id="mathNegative" onclick="negation_operator()">Click me to do math!</p>
-    <div>
-      <p>
-        Math.round(x) returns the value of x rounded to its nearest integer:
-      </p>
-      <p id="round"></p>
+  <body id="home">
+    <div class="sticky">
+      <nav class="nav-bar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#mathAdd">Math</a></li>
+          <li><a href="#slideshow">Images</a></li>
+        </ul>
+      </nav>
     </div>
+
+    <div class="math-container">
+      <p class="math-pointer" id="mathAdd" onclick="mathAddition()">
+        Click me to do math!
+      </p>
+      <hr />
+      <p class="math-pointer" id="mathSub" onclick="mathSubtraction()">
+        Click me to do math!
+      </p>
+      <p class="math-pointer" id="mathx" onclick="mathMultiplication()">
+        Click me to do math!
+      </p>
+      <p class="math-pointer" id="mathDiv" onclick="mathDivision()">
+        Click me to do math!
+      </p>
+      <p class="math-pointer" id="mathOperation" onclick="operation()">
+        Click me to do math!
+      </p>
+      <p class="math-pointer" id="mathMod" onclick="modulus_operator()">
+        Click me to do math!
+      </p>
+      <p class="math-pointer" id="mathNegative" onclick="negation_operator()">
+        Click me to do math!
+      </p>
+    </div>
+
+    <!-- A button to open the popup form -->
+    <button class="open-button" onclick="openForm()">Open Form</button>
+
+    <!-- The form -->
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Login</h1>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">
+          Close
+        </button>
+      </form>
+    </div>
+
+    <!-- Image -->
+
+    <div class="img-container">
+      <img src="Keyboard.webp" />
+    </div>
+    <a class="link" href="#">Here is a link for the top of this page</a>
+
+    <!-- alert form -->
+    <form
+      class="smallForm"
+      name="myForm"
+      action="/action_page.php"
+      onsubmit="return validateForm()"
+      method="post"
+    >
+      Name: <input class="submit" type="text" name="fname" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Slide Show  -->
+    <div id="slideshow">
+      <div>
+        <img src="mountain-nature.avif" />
+      </div>
+      <div>
+        <img src="pexels-photo-1169754.jpeg" />
+      </div>
+      <div>
+        <img src="Keyboard.webp" />
+      </div>
+    </div>
+
+    <script>
+      document.body.classList.add("fade-out");
+
+      window.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.remove("fade-out");
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

@@ -36,7 +36,7 @@ function operation() {
 function modulus_operator() {
   const modMath = 50 % 6;
   document.getElementById("mathMod").innerHTML =
-    "When you divide 50 by 6 you have a remainder of: " + modMath;
+    "When you divide 50 by 6 you have a remainder of : " + modMath;
 }
 
 // NEGATION OPERATOR
@@ -48,18 +48,32 @@ function negation_operator() {
 
 // INCREMENT OPERATORS
 
-var x = 10;
-x++;
-document.write(x + "<br>");
+//
 
-var y = 11;
-y--;
-document.write(y + "<br>");
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
 
-// RANDOM NUMBER
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
 
-window.alert(Math.random() * 100);
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
 
-//MATH OBJECT METHOD EXAMPLE
+/* slide show jquery */
+$("#slideshow > div:gt(0)").hide();
 
-document.getElementById("round").innerHTML = Math.round(4.6);
+setInterval(function () {
+  $("#slideshow > div:first")
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo("#slideshow");
+}, 3000);
